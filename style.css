@@ -7,6 +7,7 @@
 html {
   overflow-x: hidden;
 }
+
 body {
   font-family: 'Nunito', sans-serif;
   overflow-x: hidden;
@@ -14,7 +15,7 @@ body {
 
 .promoheader {
   background-color: rgb(0, 92, 255);
-  color: #FFF;
+  color: #fff;
   text-align: center;
   position: fixed;
   padding: 5px 0;
@@ -38,10 +39,78 @@ body {
   display: flex;
   align-items: center;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 40px auto 0;
   gap: 40px;
   padding: 20px;
-  margin-top: 40px;
+}
+
+.logo img {
+  flex-shrink: 0;
+  max-width: 150%;
+  height: auto;
+  margin-right: -20px;
+}
+
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-left: 10px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-container input:focus {
+  border-color: rgb(0, 92, 255);
+  box-shadow: 0 0 8px rgba(0, 71, 255, 0.1);
+}
+
+.search-container input::placeholder {
+  font-weight: bold;
+  color: #333;
+}
+
+.search-container button {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.resultado-busca {
+  display: none;
+  font-size: 13px;
+  color: #555;
+  padding: 4px 8px;
 }
 
 .acoes_user {
@@ -62,60 +131,11 @@ body {
   white-space: nowrap;
 }
 
-.login img, login svg {
+.login img,
+.login svg {
   width: 20px;
   height: auto;
   display: block;
-}
-
-.logo img {
-  max-width: 150%;
-  height: auto;
-}
-
-.search-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-}
-
-.search-container input {
-  width: 100%;
-  padding: 12px 20px;
-  border-radius: 8px;
-  border: 1px solid #E0E0E0;
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 16px;
-  outline: none;
-  transition: all 0.3s ease;
-  background-image: url('img/lupa.svg');
-  background-repeat: no-repeat;
-  background-position: right 20px center;
-  background-size: 20px;
-}
-
-.search-container input:focus {
-  border-color: rgb(0, 92, 255);
-  box-shadow: 0 0 8px rgba(0, 71, 255, 0.1);
-}
-
-.search-container {
-  position: relative;
-}
-
-.search-container button {
-  position: absolute;
-  right: 15px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.search-container input::placeholder {
-  font-weight: bold;
-  color: #333;
 }
 
 .main-navegacao {
@@ -135,66 +155,20 @@ body {
 
 .main-navegacao > ul > li > a {
   text-decoration: none;
-  color: black;
+  color: #000;
 }
 
 #categorias {
   font-weight: bold;
 }
 
-.banner-promocional {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  background: #E9EAEC;
-}
-
-.banner-imagem img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.banner-texto {
-  padding-left: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4px;
-}
-
-.banner-texto h2 {
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 90px;
-  color: #333;
-  margin: 0;
-  letter-spacing: -1px;
-  line-height: 1;
-  font-weight: 300;
-}
-
-.banner-texto h2 strong {
-  font-weight: 900;
-}
-
-.banner-texto p {
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: 600;
-  color: rgb(0, 92, 255);
-  font-size: 18px;
-  letter-spacing: 6px;
-  margin: 8px 0 0 0;
-}
-
-.desconto {
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 72px;
-  font-weight: 900;
-  color: #0047FF;
-  display: block;
-  line-height: 1;
-  margin: 0;
+.hamburguer {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
 }
 
 .menu-categorias-container {
@@ -209,10 +183,10 @@ body {
   z-index: 1000;
   background: #fff;
   border: 1px solid #e0e0e0;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   width: 860px;
-  border-radius: 0 0 8px 8px;
   min-height: 350px;
+  border-radius: 0 0 8px 8px;
 }
 
 .dropdown-menu.aberto {
@@ -309,7 +283,7 @@ body {
 .dropdown-banner-texto {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -342,68 +316,80 @@ body {
 }
 
 .btn-ver-todos:hover {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.banner-promocional {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #e9eaec;
+}
+
+.banner-imagem img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.banner-texto {
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.banner-texto h2 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 90px;
+  color: #333;
+  margin: 0;
+  letter-spacing: -1px;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.banner-texto h2 strong {
+  font-weight: 900;
+}
+
+.banner-texto p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  color: rgb(0, 92, 255);
+  font-size: 18px;
+  letter-spacing: 6px;
+  margin: 8px 0 0;
+}
+
+.desconto {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 72px;
+  font-weight: 900;
+  color: #0047ff;
+  display: block;
+  line-height: 1;
+  margin: 0;
 }
 
 .lancamentos {
   padding: 20px 40px;
-  
-  
-  
 }
 
-.card-produto {
-  width: calc(20% - 16px);
-  margin-top: 4px;
-  border: 2px solid #E7E7E7;
-  border-radius: 12px;
-  position: relative;
-  padding: 16px;
-
-  }
-
-  .card-produto img {
-    margin: 0 auto;
-    display: block;
-    width: 100%;
-    
-  }
-
-  .tag-novo {
-    top: 10px;
-    left: 10px;
-    color: white;
-    background-color: #00264E ;
-    border-radius: 4px;
-    
-  }
-
-  .btn-comprar {
-    background-color:#1a56db ;
-    border-color: transparent;
-    color: white;
-    text-decoration: none;
-    width: 100%;
-    padding: 15px;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
 .vitrine-produtos {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   align-items: flex-start;
-
 }
 
 .texto-vitrine {
   width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: 0;
-  
 }
 
 .texto-vitrine h2 {
@@ -412,24 +398,72 @@ body {
 
 .texto-vitrine a {
   text-decoration: none;
-  color: black;
-  margin-left: auto ;
+  color: #000;
+  margin-left: auto;
 }
 
-.vitrine-produtos a {
-  align-self: center;
+.swiper-vitrine-1,
+.swiper-vitrine-2 {
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #1a56db;
+  transform: scale(0.7);
+}
+
+.card-produto {
+  width: 100%;
+  margin-top: 4px;
+  border: 2px solid #e7e7e7;
+  border-radius: 12px;
+  position: relative;
+  padding: 16px;
+}
+
+.card-produto img {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+}
+
+.tag-novo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  background-color: #00264e;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .tag-desconto {
-  color: white;
-  background: #5EC0BE;
+  color: #fff;
+  background: #5ec0be;
   border-radius: 6px;
   margin: 5px;
   text-decoration: underline;
+  font-size: 13px;
 }
 
 .preco-atual {
   font-size: 20px;
+}
+
+.btn-comprar {
+  background-color: #1a56db;
+  border: none;
+  color: #fff;
+  width: 100%;
+  padding: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .caneca {
@@ -437,14 +471,13 @@ body {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 60px;
-  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px;
 }
 
 .caneca-imagem img {
-  background: #C2C2C2;
+  background: #c2c2c2;
   width: 100%;
   max-width: 500px;
   height: auto;
@@ -463,20 +496,19 @@ body {
   margin-bottom: 15px;
 }
 
-
 .fundo-cinza {
-  background: #DEDEDE;
+  background: #dedede;
   width: 100%;
 }
 
 .caneca2 {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: 1fr 1fr;
   gap: 60px;
   max-width: 1200px;
-  margin: 0 auto; 
+  margin: 0 auto;
   padding: 40px 20px;
-  align-items: center; 
+  align-items: center;
 }
 
 .caneca2-texto h3 {
@@ -492,15 +524,13 @@ body {
 .item-localizacao p {
   display: flex;
   align-items: flex-start;
-  gap: 15px; 
+  gap: 15px;
   margin-bottom: 20px;
 }
 
 .item-localizacao p img {
-  margin-top: 4px; 
+  margin-top: 4px;
 }
-
-/* footer */
 
 .banner-com-texto {
   position: relative;
@@ -549,7 +579,7 @@ body {
 }
 
 .form-newsletter {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   padding: 40px;
   border-radius: 8px;
   display: flex;
@@ -569,22 +599,12 @@ body {
   font-size: 1rem;
 }
 
-.btn-cadastrar {
-  background-color: #0055ff;
-  color: white;
-  border: none;
-  padding: 12px 35px;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 .termos {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 0.85rem;
-  color: #555555;
+  color: #555;
 }
 
 .termos input[type="checkbox"] {
@@ -597,21 +617,22 @@ body {
   text-decoration: underline;
 }
 
-.footer {
-  background-color: white;
-  color: #333;
+.btn-cadastrar {
+  background-color: #0055ff;
+  color: #fff;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .footer-container {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
-}
-
-.background-footer {
-  background-color: #F5F5F5;
 }
 
 .footer-brand img {
@@ -629,18 +650,18 @@ body {
   height: 24px;
 }
 
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .footer-links h4,
 .footer-contact h4 {
   font-size: 1.2rem;
   margin-bottom: 20px;
   margin-top: 0;
   color: #000;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-links li {
@@ -661,7 +682,7 @@ body {
 }
 
 .footer-contact p strong {
-  color: #000000;
+  color: #000;
 }
 
 .footer-bottom {
@@ -674,7 +695,7 @@ body {
 .payment-methods {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .footer-legal {
@@ -687,21 +708,15 @@ body {
 
 .footer-legal p {
   font-size: 0.75rem;
-  color: #888888;
+  color: #888;
   line-height: 1.6;
   text-align: center;
   margin: 0;
   width: 100%;
 }
 
-.payment-methods {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
 .imgs_patrocinios {
- display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -712,24 +727,61 @@ body {
   max-height: 30px;
 }
 
-@media (max-width: 768px) {
-  .card-produto {
-    width: calc(20% - 16px)
-  }
-  .titulo-produto, .preco-atual {
-    font-size: 12px;
-  }
-  .tag-desconto, .parcelamento {
-    font-size: 12px;
-  }
-  .main-navegacao > ul {
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: flex-start;
-    padding: 0 20px;
+@media (max-width: 1024px) {
+  .hamburguer {
+    display: block;
   }
 
+  .main-navegacao > ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .main-navegacao > ul.aberto {
+    display: flex;
+  }
+}
+
+@media (max-width: 950px) {
+  .titulo-produto {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
   .main-navegacao > ul > li > a {
+    padding: 12px 20px;
+    display: block;
+    border-bottom: 1px solid #eee;
     font-size: 12px;
+  }
+
+  .titulo-produto,
+  .preco-atual {
+    font-size: 12px;
+  }
+
+  .tag-desconto,
+  .parcelamento {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+ 
+  .banner-texto h2 {
+    font-size: 48px;
+    padding-left: 0;
+  }
+
+  .desconto {
+    font-size: 40px;
+  }
+
+  .banner-texto p {
+    font-size: 14px;
+    letter-spacing: 3px;
   }
 }
