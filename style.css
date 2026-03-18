@@ -755,37 +755,134 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 @media (max-width: 768px) {
-  .main-navegacao > ul > li > a {
-    padding: 12px 20px;
-    display: block;
-    border-bottom: 1px solid #eee;
-    font-size: 12px;
+  .header-main {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 0;
   }
 
-  .titulo-produto,
-  .preco-atual {
-    font-size: 12px;
+  .hamburguer {
+    order: 1;
   }
 
-  .tag-desconto,
-  .parcelamento {
-    font-size: 12px;
+  .logo {
+    order: 2;
+    flex: 1;
+    text-align: center;
   }
-}
 
-@media (max-width: 768px) {
- 
+  .acoes_user {
+    order: 3;
+    margin-left: 0;
+  }
+
+  .main-navegacao {
+    margin-bottom: 0;
+  }
+
+  .search-wrapper {
+    display: none;
+  }
+
+  .login {
+    display: none;
+  }
+
+  .banner-promocional {
+    flex-direction: row;
+    min-height: 200px;
+  }
+
+  .banner-imagem {
+    width: 50%;
+  }
+
+  .banner-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .banner-texto {
+    width: 50%;
+    position: static;
+    transform: none;
+    padding: 0 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
   .banner-texto h2 {
-    font-size: 48px;
+    font-size: 36px;
     padding-left: 0;
   }
 
-  .desconto {
-    font-size: 40px;
+  .banner-texto p {
+    font-size: 10px;
+    letter-spacing: 2px;
   }
 
-  .banner-texto p {
-    font-size: 14px;
-    letter-spacing: 3px;
+  .desconto {
+    font-size: 28px;
+  }
+
+  .caneca {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .caneca2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    direction: ltr;
+  }
+
+  .caneca2 .bloco-de-textos {
+    order: 1;
+  }
+
+  .img-caneca-principal {
+    width: 100%;
+    height: auto;
+    order: -1;
+}
+  }
+
+  .caneca2-texto h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .lancamentos {
+    padding: 20px;
+  }
+
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .logo img {
+    max-width: 100px;
+  }
+
+  .acoes_user {
+    gap: 15px;
+  }
+
+  .form-newsletter {
+    padding: 20px;
   }
 }
